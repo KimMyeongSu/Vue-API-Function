@@ -1,5 +1,5 @@
 # vue-api-function
-
+ : 자주 사용하는 기능이거나 이해가 잘안되는 기능들을 모아두고 참고
 ## Project setup
 ```
 npm install
