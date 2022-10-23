@@ -3,8 +3,8 @@
  
   
 
-#개발 참고 
-[이미지 업로드 Canvas에 보여주기][https://github.com/KimMyeongSu/Vue-API-Function/blob/master/src/components/imageUploadDrow.vue]
+# 개발 참고 
+[이미지 업로드 Canvas에 보여주기](https://github.com/KimMyeongSu/Vue-API-Function/blob/master/src/components/imageUploadDrow.vue)
 
 ## Project setup
 ```
