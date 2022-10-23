@@ -3,7 +3,7 @@
     <h1>사진업로드</h1>
     <div class="image-box">
         <!-- <label for="file">일반 사진 등록</label> -->
-        <input type="file" ref="files" @change="imageUpload" accept="image/*" />
+        <input type="file" ref="files" @change="readInputFile" accept="image/*" />
     </div>
     <!-- 1. 임의로 캔버스 영역설정  (완료 )
     2. 설정된 캔버스에 업로드한 이미지 뿌려주기
@@ -23,7 +23,7 @@ import myImage from "../assets/code.png"
 export default {
     data(){
         return {
-            reader: new FileReader(),
+            fileReader: new FileReader(),
             img:  new Image(),
             url: null,
         }
@@ -31,16 +31,18 @@ export default {
     methods:{
         imageUpload(e) {
             this.img =this.$refs.files.files[0]; 
-            this.url = URL.createObjectURL(e.target.files[0]);
-            console.log(this.url);
+            // this.url = URL.createObjectURL(e.target.files[0]);
             let canvasImage = this.$refs.canvasImage;
-            let context = canvasImage.getContext("2d"); 
             this.img.src = URL.createObjectURL(this.$refs.files.files[0]);
-
-            // console.log(this.img)
-            this.img.onload= function(){
-                console.log('여기 콜이 안되는거같은데?');
-
+            
+            // console.log(this.fileReader.readAsDataURL(this.$refs.files.files[0]));
+            //1. 업로드한 파일 읽어오기. 
+            const uploadFile = this.$refs.files.files[0];
+            
+            this.fileReader.readAsDataURL(uploadFile);
+            this.fileReader.onload= function(e){
+                console.log(e.target.result);
+                this.url = e.target.result;
             }
         },
         func(){
@@ -53,7 +55,22 @@ export default {
             ctx.drawImage(bg, 0 ,0 ,500,600);
             };
         },        
-
+        readInputFile(e){
+        const canvas = this.$refs.canvasImage;
+        const ctx = canvas.getContext('2d');
+        var file = e.target.files;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var img = new Image();
+            img.onload = function () {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file[0]);
+        },
     }
 }
 </script>
