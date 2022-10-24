@@ -4,7 +4,7 @@
   
 
 # 개발 참고 
-[이미지 업로드 Canvas에 보여주기](https://github.com/KimMyeongSu/Vue-API-Function/blob/master/src/components/imageUploadDrow.vue)
+[이미지 업로드 Canvas에 보여주기, 마우스 이벤트로 네모영역 잡아서 좌표값 찍어주기](https://github.com/KimMyeongSu/Vue-API-Function/blob/master/src/components/imageUploadDrow.vue)
 
 ## Project setup
 ```
