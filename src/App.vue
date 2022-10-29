@@ -1,8 +1,6 @@
 <template>  
     <div id="app">
-<!-- <Vuetyfy_DatePicker></Vuetyfy_DatePicker> -->
-    <!-- <imageUpload></imageUpload> -->
-    <imageUploadDrow></imageUploadDrow>
+      <imageUploadDrow></imageUploadDrow>
     </div>
 
 </template>
@@ -16,7 +14,6 @@ export default {
   name: 'App',
 
   components: {    
-    // Vuetyfy_DatePicker,
     imageUpload,
     imageUploadDrow,
   },
