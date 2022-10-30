@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <h1>사진업로드</h1>
-    <p>
-        업로드한 이미지에 마우스 드래그로 영역좌표값 가져오기
-    </p>
-    <div class="image-box">
-        <input type="file" ref="files" @change="imageUpload" accept="image/*" />
+    <div>
+        <h1>사진업로드</h1>
+        <p>
+            업로드한 이미지에 마우스 드래그로 영역좌표값 가져오기
+        </p>
+        <div class="image-box">
+            <input type="file" ref="files" @change="imageUpload" accept="image/*" />
+        </div>
+        <div></div>
+        <h1><br>X1:{{resultRect.X1}}<br>Y1:{{resultRect.Y1}}<br>X2:{{resultRect.X2}}<br>Y2:{{resultRect.Y2}}</h1>
+        <canvas ref="canvasImage" style="z-index:1;"></canvas>
+        <canvas ref="canvasRect" @mousedown="getRectAreaDown" @mouseup="getRectAreaUp" @mousemove="getRectAreaMove" style="z-index:2;"></canvas>
+        <div class="dndFocus"></div>
     </div>
-    <div><h1><br>X1:{{resultRect.X1}}<br>Y1:{{resultRect.Y1}}<br>X2:{{resultRect.X2}}<br>Y2:{{resultRect.Y2}}</h1></div>
-    <canvas ref="canvasImage" style="z-index:1;"></canvas>
-    <canvas ref="canvasRect" @mousedown="getRectAreaDown" @mouseup="getRectAreaUp" @mousemove="getRectAreaMove" style="z-index:2;"></canvas>
-    <div class="dndFocus"></div>
-    
-  </div>
 </template>
 
 <script>
