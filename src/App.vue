@@ -1,7 +1,10 @@
 <template>  
     <div id="app">
-      <!-- <imageUploadDrow></imageUploadDrow> -->
-      <imageKonva></imageKonva>
+      <!-- <imageUploadDrow></imageUploadDrow>
+      <imageKonva></imageKonva> -->
+      <br/>
+      <h3>캔버스 기능</h3>
+      <router-view></router-view>
     </div>
 
 </template>

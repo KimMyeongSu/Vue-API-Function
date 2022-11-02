@@ -5,6 +5,7 @@ import VueKonva from 'vue-konva';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import router from './router/router'
 Vue.config.productionTip = false
 
 Vue.use(VueKonva);
@@ -16,5 +17,6 @@ Vue.use(IconsPlugin)
 new Vue({
   vuetify,
   VueKonva,
+  router,
   render: h => h(App)
 }).$mount('#app') 
